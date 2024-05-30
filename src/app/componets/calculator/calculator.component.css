@@ -1,0 +1,38 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+    text-align: center;
+  }
+  
+.button-grid {
+    text-align: center; /* Centra el contenido horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+  }
+  
+  .input-field {
+    width: 200px; /* Ancho más pequeño del campo de entrada */
+    height: 30px; /* Altura más pequeña del campo de entrada */
+    margin-bottom: 20px; /* Espacio entre el input y los botones */
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    display: block; 
+
+    }
+  
+  .row {
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .button-item {
+    margin: 10px; /* Añade espacio entre los botones */
+  }
+  

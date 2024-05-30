@@ -1,0 +1,14 @@
+<div class="container">
+  <input type="text" [value]="inputValue" readonly class="input-field"/>
+  <div class="button-grid">
+    <ng-container *ngFor="let row of buttons">
+      <div class="row">
+        <ng-container *ngFor="let button of row">
+          <button mat-fab color="primary" (click)="buttonClick(button)" class="button-item">
+            {{ button.text }}
+          </button>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

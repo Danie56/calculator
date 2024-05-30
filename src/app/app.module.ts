@@ -3,14 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CalculatorComponent } from './componets/calculator/calculator.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalculatorComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
