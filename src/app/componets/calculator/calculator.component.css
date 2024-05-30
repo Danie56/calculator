@@ -1,59 +1,30 @@
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    text-align: center;
-  }
+.mdc-text-field__input {
+  display: block;
+  margin-bottom: 16px;
   
-.button-grid {
-    text-align: center; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    height: 100vh; 
-  }
-  
-  .input-field {
-    width: 200px; 
-    height: 30px;
-    margin-bottom: 20px; 
-    padding: 5px;
-    font-size: 18px;
-    text-align: center;
-    display: block; 
-
-    }
-  
-  .row {
-    display: inline-block;
-    text-align: center;
-  }
-  
-  .button-item {
-    margin: 10px; 
-  }
-  .actions {
-    margin: 10px;
-  }
-  .data {
-    display: flex;
-    justify-content: center;  
-  } 
-
-
-.mat-select {
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
-.mat-form-field {
-  width: 100%; 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+button {
+  margin-top: 16px;
+}
+mat-form-field {
+  width: 100%;
+  width: 300px;
+  padding: 10px; 
+}
+.mat-select{
+ background-color: brown;
+ text-align: center;
+ align-items: center;
+}
+.cotaner{
+  display: block;
+  background-color: brown;
+  width: 25%;
+  height: -50px;
 
-.cdk-overlay-container {
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }

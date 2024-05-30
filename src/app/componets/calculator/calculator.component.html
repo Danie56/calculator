@@ -1,39 +1,22 @@
-
-<div class="data">
-  <input type="text" [value]="inputValue" readonly class="input-field"/>
-  <input type="text" [value]="inputValue" readonly class="input-field"/>
-    
-</div>
-
-<div class="container">
-  <div class="button-grid">
-    <ng-container *ngFor="let row of buttons">
-      <div class="row">
-        <ng-container *ngFor="let button of row">
-          <button mat-fab  color="warn" matTooltip="Acent" (click)="buttonClick(button)" class="button-item">
-            {{ button.text }}
-          </button>
-        </ng-container>
-      </div>
-    </ng-container>
-  </div>
-  <div class="actions">
-
-    <button style="color: brown;
-    height: 100px;
-    width: 100px;"> calcular</button>
-        <button style="color: brown;
-        height: 100px;
-        width: 100px;" (click)="cls()"> limpiar</button>
-    
-  </div>
-  <mat-form-field appearance="outline">
-    <mat-label>Select an option</mat-label>
-    <mat-select>
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
+<div class="cotaner">
+<form [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <input matInput formControlName="expression">
   </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <input type="number" matInput formControlName="sub_intervals">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>tipo de metodo</mat-label>
+    <mat-select formControlName="type_method">
+      <mat-option *ngFor="let option of ['SIMPSON_1_3', 'TRAPEZOIDAL_METHOD', 'JORGE', 'SIMPSON_3_8', 'OPEN_SIMPSON']" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="calculate()">Calcular</button>
+</form>
 </div>

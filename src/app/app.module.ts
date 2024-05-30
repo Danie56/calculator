@@ -8,9 +8,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
-import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FieldComponent } from './componets/field/field.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FieldComponent } from './componets/field/field.component';
     AppRoutingModule,
     MatButtonModule,
     HttpClientModule,
-    MatFormFieldModule, MatInputModule, MatSelectModule,BrowserAnimationsModule
+     MatInputModule, MatSelectModule,BrowserAnimationsModule, FormsModule, ReactiveFormsModule,MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

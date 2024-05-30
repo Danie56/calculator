@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { IntegralService } from 'src/app/services/integral.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Button {
   text: string;
@@ -27,10 +29,23 @@ cls() {
     [{ text: '7' }, { text: '8' }, { text: '9' }, { text: '^', color: 'accent' }, { text: '{a}^{b}', color: 'accent' }],
     [{ text: 'nth_root()', color: 'accent' }, { text: 'e' }, { text: 'pi' }, { text: 'sqrt', color: 'accent' }, { text: 'log10', color: 'accent' }],
   ];
+  form: FormGroup;
 
 
-  constructor(private intetegralService:IntegralService) { }
+  constructor(private fb: FormBuilder, private integralService : IntegralService,private _snackBar: MatSnackBar) {
+    this.form = this.fb.group({
+      expression: [''],
+      sub_intervals: [''],
+      type_method: ['']
+    });
   
+  }
+  
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 4000, 
+    });
+  }
 
   ngOnInit() {
   }
@@ -40,9 +55,12 @@ cls() {
     console.log(`Clicked: ${button.text}`);
   }
   calculate(){
-    /*this.intetegralService.save().subscribe(()=>{
+    this.integralService.save(this.form.value).subscribe(()=>{
+      console.log('a')
 
-    })*/
+    },() => {
+      this.openSnackBar('asegurate de que el formato LaTeX sea corecto','Cerrar')
+    });
   }
   
 
