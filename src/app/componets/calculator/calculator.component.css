@@ -4,22 +4,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+    height: 100vh; 
     text-align: center;
   }
   
 .button-grid {
-    text-align: center; /* Centra el contenido horizontalmente */
+    text-align: center; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+    justify-content: center; 
+    height: 100vh; 
   }
   
   .input-field {
-    width: 200px; /* Ancho más pequeño del campo de entrada */
-    height: 30px; /* Altura más pequeña del campo de entrada */
-    margin-bottom: 20px; /* Espacio entre el input y los botones */
+    width: 200px; 
+    height: 30px;
+    margin-bottom: 20px; 
     padding: 5px;
     font-size: 18px;
     text-align: center;
@@ -33,6 +33,27 @@
   }
   
   .button-item {
-    margin: 10px; /* Añade espacio entre los botones */
+    margin: 10px; 
   }
-  
+  .actions {
+    margin: 10px;
+  }
+  .data {
+    display: flex;
+    justify-content: center;  
+  } 
+
+
+.mat-select {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.mat-form-field {
+  width: 100%; 
+}
+
+.cdk-overlay-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
