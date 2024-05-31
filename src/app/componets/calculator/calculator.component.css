@@ -16,14 +16,8 @@ mat-form-field {
   width: 300px;
   padding: 10px; 
 }
-.mat-select{
- background-color: brown;
- text-align: center;
- align-items: center;
-}
 .cotaner{
   display: block;
-  background-color: brown;
   width: 25%;
   height: -50px;
 
