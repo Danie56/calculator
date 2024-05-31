@@ -1,22 +1,24 @@
-<div class="cotaner">
-<form [formGroup]="form">
-  <mat-form-field appearance="fill">
-    <input matInput formControlName="expression">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <input type="number" matInput formControlName="sub_intervals">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>tipo de metodo</mat-label>
-    <mat-select formControlName="type_method">
-      <mat-option *ngFor="let option of ['SIMPSON_1_3', 'TRAPEZOIDAL_METHOD', 'JORGE', 'SIMPSON_3_8', 'OPEN_SIMPSON']" [value]="option">
-        {{ option }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <button mat-raised-button color="primary" (click)="calculate()">Calcular</button>
+<form class="form" [formGroup]="form">
+  <div class="title">Calculadora</div>
+  <div class="input-container ic1">
+    <input id="integral" formControlName="expression" class="input" type="text" placeholder=" " />
+    <div class="cut"></div>
+    <label for="integral" class="placeholder">Integral</label>
+  </div>
+  <div class="input-container ic2">
+    <input id="sub_int" formControlName="sub_intervals" class="input" type="text" placeholder=" " />
+    <div class="cut" style="width: 100px;"></div>
+    <label for="sub_int" class="placeholder">Sub intervalo</label>
+  </div>
+  <div class="input-container ic2">
+    <select id="type_method" name="type_method" class="input" formControlName="type_method">
+      <option value="" selected disabled>Tipo de metodo</option>
+      <option value="SIMPSON_1_3">SIMPSON_1_3</option>
+      <option value="TRAPEZOIDAL_METHOD">TRAPEZOIDAL_METHOD</option>
+      <option value="JORGE">JORGE</option>
+      <option value="SIMPSON_3_8">SIMPSON_3_8</option>
+      <option value="OPEN_SIMPSON">OPEN_SIMPSON</option>
+    </select>
+  </div>
+  <button type="text" class="submit" (click)="calculate()">Calcular</button>
 </form>
-</div>
