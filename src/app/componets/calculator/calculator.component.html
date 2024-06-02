@@ -1,63 +1,68 @@
-<form class="form" [formGroup]="form">
-  <div class="title">Calculadora</div>
-  <div class="input-container ic1">
-    <input [(ngModel)]="inputValue" id="integral" formControlName="expression" class="input" type="text" placeholder=" " />
-    <div class="cut"></div>
-    <label for="integral" class="placeholder">Integral</label>
+<div class="elemet-top">
+  <form class="form" [formGroup]="form">
+    <div class="title">Calculadora</div>
+    <div class="input-container ic1">
+      <input [(ngModel)]="inputValue" id="integral" formControlName="expression" class="input" type="text" placeholder=" " />
+      <div class="cut"></div>
+      <label for="integral" class="placeholder">Integral</label>
+    </div>
+    <div class="input-container ic2">
+      <input id="sub_int" formControlName="sub_intervals" class="input" type="text" placeholder=" " />
+      <div class="cut" style="width: 100px;"></div>
+      <label for="sub_int" class="placeholder">Sub intervalo</label>
+    </div>
+    <div class="input-container ic2">
+      <select id="type_method" name="type_method" class="input" formControlName="type_method">
+        <option value="" selected disabled>Tipo de metodo</option>
+        <option value="SIMPSON_1_3">SIMPSON_1_3</option>
+        <option value="TRAPEZOIDAL_METHOD">TRAPEZOIDAL_METHOD</option>
+        <option value="JORGE">JORGE</option>
+        <option value="SIMPSON_3_8">SIMPSON_3_8</option>
+        <option value="OPEN_SIMPSON">OPEN_SIMPSON</option>
+      </select>
+    </div>
+  </form>
+  <div class="graph-container"></div>
+</div>
+<div class="elemet-down">
+  <div class="keyboard">
+    <div class="keyboard-rows r1">
+      <button class="button" (click)="addValue('1')">1</button>
+      <button class="button" (click)="addValue('2')">2</button>
+      <button class="button" (click)="addValue('3')">3</button>
+      <button class="button" (click)="addValue('cos()')">cos</button>
+      <button class="button" (click)="addValue('sin()')">sin</button>
+      <button class="button" (click)="addValue('nth_root(x,n)')">x&radic;x</button>
+    </div>
+    <div class="keyboard-rows r2">
+      <button class="button" (click)="addValue('4')">4</button>
+      <button class="button" (click)="addValue('5')">5</button>
+      <button class="button" (click)="addValue('6')">6</button>
+      <button class="button" (click)="addValue('tan()')">tan</button>
+      <button class="button" (click)="addValue('log()')">in</button>
+      <button class="button" (click)="addValue('sqrt()')">sqrt</button>
+    </div>
+    <div class="keyboard-rows r3">
+      <button class="button" (click)="addValue('7')">7</button>
+      <button class="button" (click)="addValue('8')">8</button>
+      <button class="button" (click)="addValue('9')">9</button>
+      <button class="button" (click)="addValue('log10()')">log</button>
+      <button class="button" (click)="addValue('e')">e</button>
+      <button class="button" (click)="addValue('x')">x</button>
+    </div>
+    <div class="keyboard-rows r4">
+      <button class="button" (click)="addValue('+')">+</button>
+      <button class="button" (click)="addValue('0')">0</button>
+      <button class="button" (click)="addValue('-')">-</button>
+      <button class="button" (click)="addValue('/')">/</button>
+      <button class="button" (click)="addValue('*')">*</button>
+      <button class="button" (click)="addValue('^')">^</button>
+    </div>
+    <div class="keyboard-rows r5">
+      <button class="button"(click)="addValue('int_{a}^{b} ')">&int;</button>
+      <button class="button"  (click)="cls()">C</button>
+    </div>
+    <button type="text" class="submit" (click)="calculate()">Calcular</button>
   </div>
-  <div class="input-container ic2">
-    <input id="sub_int" formControlName="sub_intervals" class="input" type="text" placeholder=" " />
-    <div class="cut" style="width: 100px;"></div>
-    <label for="sub_int" class="placeholder">Sub intervalo</label>
-  </div>
-  <div class="input-container ic2">
-    <select id="type_method" name="type_method" class="input" formControlName="type_method">
-      <option value="" selected disabled>Tipo de metodo</option>
-      <option value="SIMPSON_1_3">SIMPSON_1_3</option>
-      <option value="TRAPEZOIDAL_METHOD">TRAPEZOIDAL_METHOD</option>
-      <option value="JORGE">JORGE</option>
-      <option value="SIMPSON_3_8">SIMPSON_3_8</option>
-      <option value="OPEN_SIMPSON">OPEN_SIMPSON</option>
-    </select>
-  </div>
-</form>
-<div class="keyboard">
-  <div class="keyboard-rows r1">
-    <button class="button" (click)="addValue('1')">1</button>
-    <button class="button" (click)="addValue('2')">2</button>
-    <button class="button" (click)="addValue('3')">3</button>
-    <button class="button" (click)="addValue('cos()')">cos</button>
-    <button class="button" (click)="addValue('sin()')">sin</button>
-    <button class="button" (click)="addValue('nth_root(x,n)')">x&radic;x</button>
-  </div>
-  <div class="keyboard-rows r2">
-    <button class="button" (click)="addValue('4')">4</button>
-    <button class="button" (click)="addValue('5')">5</button>
-    <button class="button" (click)="addValue('6')">6</button>
-    <button class="button" (click)="addValue('tan()')">tan</button>
-    <button class="button" (click)="addValue('log()')">in</button>
-    <button class="button" (click)="addValue('sqrt()')">sqrt</button>
-  </div>
-  <div class="keyboard-rows r3">
-    <button class="button" (click)="addValue('7')">7</button>
-    <button class="button" (click)="addValue('8')">8</button>
-    <button class="button" (click)="addValue('9')">9</button>
-    <button class="button" (click)="addValue('log10()')">log</button>
-    <button class="button" (click)="addValue('e')">e</button>
-    <button class="button" (click)="addValue('x')">x</button>
-  </div>
-  <div class="keyboard-rows r4">
-    <button class="button" (click)="addValue('+')">+</button>
-    <button class="button" (click)="addValue('0')">0</button>
-    <button class="button" (click)="addValue('-')">-</button>
-    <button class="button" (click)="addValue('/')">/</button>
-    <button class="button" (click)="addValue('*')">*</button>
-    <button class="button" (click)="addValue('^')">^</button>
-  </div>
-  <div class="keyboard-rows r5">
-    <button class="button"(click)="addValue('int_{a}^{b} ')">&int;</button>
-    <button class="button"  (click)="cls()">C</button>
-  </div>
-  <button type="text" class="submit" (click)="calculate()">Calcular</button>
-
+  <div class="table-container"></div>
 </div>
