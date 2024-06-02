@@ -1,6 +1,6 @@
 .form {
   background-color: #15172b;
-  border-radius: 20px;
+  border-radius: 20px 20px 0px 0px;
   box-sizing: border-box;
   height: 500px;
   padding: 30px;
@@ -25,6 +25,7 @@
 
 .ic1 {
   margin-top: 40px;
+
 }
 
 .ic2 {
@@ -103,4 +104,46 @@
 
 .submit:active {
   background-color: #06b;
+}
+.keyboard {
+  background-color: #15172b;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 30px;
+  width: 420px;
+  margin: auto;
+
+}
+.keyboard-rows {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 50px;
+  position: relative;
+  width: 100%;
+  
+}
+.r1{
+  margin-bottom: 10px;
+}
+.r2{
+  margin-bottom: 10px;
+}
+.r3{
+  margin-bottom: 10px;
+}
+.button{
+  background-color: #303245;
+  text-align: center;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  height: 45px;
+  outline: 0;
+  width: 45px;
+  margin: 0 5px;
+  border-radius: 12px;
+  color: #eee;
+
+
 }

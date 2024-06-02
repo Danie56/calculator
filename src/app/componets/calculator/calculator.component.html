@@ -1,7 +1,7 @@
 <form class="form" [formGroup]="form">
   <div class="title">Calculadora</div>
   <div class="input-container ic1">
-    <input id="integral" formControlName="expression" class="input" type="text" placeholder=" " />
+    <input [(ngModel)]="inputValue" id="integral" formControlName="expression" class="input" type="text" placeholder=" " />
     <div class="cut"></div>
     <label for="integral" class="placeholder">Integral</label>
   </div>
@@ -20,5 +20,44 @@
       <option value="OPEN_SIMPSON">OPEN_SIMPSON</option>
     </select>
   </div>
-  <button type="text" class="submit" (click)="calculate()">Calcular</button>
 </form>
+<div class="keyboard">
+  <div class="keyboard-rows r1">
+    <button class="button" (click)="addValue('1')">1</button>
+    <button class="button" (click)="addValue('2')">2</button>
+    <button class="button" (click)="addValue('3')">3</button>
+    <button class="button" (click)="addValue('cos()')">cos</button>
+    <button class="button" (click)="addValue('sin()')">sin</button>
+    <button class="button" (click)="addValue('nth_root(x,n)')">x&radic;x</button>
+  </div>
+  <div class="keyboard-rows r2">
+    <button class="button" (click)="addValue('4')">4</button>
+    <button class="button" (click)="addValue('5')">5</button>
+    <button class="button" (click)="addValue('6')">6</button>
+    <button class="button" (click)="addValue('tan()')">tan</button>
+    <button class="button" (click)="addValue('log()')">in</button>
+    <button class="button" (click)="addValue('sqrt()')">sqrt</button>
+  </div>
+  <div class="keyboard-rows r3">
+    <button class="button" (click)="addValue('7')">7</button>
+    <button class="button" (click)="addValue('8')">8</button>
+    <button class="button" (click)="addValue('9')">9</button>
+    <button class="button" (click)="addValue('log10()')">log</button>
+    <button class="button" (click)="addValue('e')">e</button>
+    <button class="button" (click)="addValue('x')">x</button>
+  </div>
+  <div class="keyboard-rows r4">
+    <button class="button" (click)="addValue('+')">+</button>
+    <button class="button" (click)="addValue('0')">0</button>
+    <button class="button" (click)="addValue('-')">-</button>
+    <button class="button" (click)="addValue('/')">/</button>
+    <button class="button" (click)="addValue('*')">*</button>
+    <button class="button" (click)="addValue('^')">^</button>
+  </div>
+  <div class="keyboard-rows r5">
+    <button class="button"(click)="addValue('int_{a}^{b} ')">&int;</button>
+    <button class="button"  (click)="cls()">C</button>
+  </div>
+  <button type="text" class="submit" (click)="calculate()">Calcular</button>
+
+</div>

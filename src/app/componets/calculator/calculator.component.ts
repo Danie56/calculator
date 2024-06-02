@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { IntegralService } from 'src/app/services/integral.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -20,7 +19,7 @@ export class CalculatorComponent implements OnInit {
 cls() {
   this.inputValue =''
 }
-  inputValue: string = ''; // Variable que almacena el valor del campo de entrada
+  inputValue: string = ''; 
   color?: 'primary' | 'accent' | 'warn' | string;
 
   buttons: Button[][] = [
@@ -55,12 +54,17 @@ cls() {
     console.log(`Clicked: ${button.text}`);
   }
   calculate(){
+    this.form.value.expression = `\\${this.inputValue} \\, dx`
+    console.log(this.form.value.expression)
     this.integralService.save(this.form.value).subscribe(()=>{
       console.log('a')
 
     },() => {
       this.openSnackBar('asegurate de que el formato LaTeX sea corecto','Cerrar')
     });
+  }
+  addValue(value:string){
+    this.inputValue += value
   }
   
 
